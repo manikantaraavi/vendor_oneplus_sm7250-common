@@ -45,7 +45,7 @@
         <Config
             Id="0x00001081" Type="1" Enable="true" Timeout="2000" Target="lagoon"
             Resources="0x40C20000, 0x28, 0x40C1C000, 0x32, 0x40804000, 0xFFF, 0x40804100, 0xFFF,
-                       0x40800000, 0xFFF, 0x40800100, 0xFFF" />
+                       0x40800000, 1555, 0x40800100, 1516" />
 
     <!--app lauch boost (disabling packing)-->
         <!-- POWER COLLAPSE resource opcode, value-->
@@ -232,6 +232,11 @@
             Resources="0x43010000, 0x26, 0x40800000, 2073, 0x40800100, 1516, 0x40C00000, 2,
                        0x40C74000, 0xC0, 0x40408000, 0x27" />
 
+        <Config
+            Id="0x00001080" Type="1" Enable="true" Target="lagoon" Fps="144"
+            Resources="0x43010000, 0x26, 0x40800000, 2073, 0x40800100, 1516, 0x40C00000, 2,
+                       0x40C74000, 0xC0, 0x40408000, 0x27" />
+
     <!--Horizontal Scroll boost-->
         <!-- CPUBW_MIN_FREQ resource opcode, value-->
         <!-- CPUBOOST_MIN_FREQ BIG CORE resource opcode, value -->
@@ -291,6 +296,11 @@
 
         <Config
             Id="0x00001080" Type="2" Enable="true" Target="lagoon" Fps="120"
+            Resources="0x43010000, 0x26, 0x40800000, 2073, 0x40800100, 1516, 0x40C00000, 2,
+                       0x40C74000, 0xC0, 0x40408000, 0x27" />
+
+        <Config
+            Id="0x00001080" Type="2" Enable="true" Target="lagoon" Fps="144"
             Resources="0x43010000, 0x26, 0x40800000, 2073, 0x40800100, 1516, 0x40C00000, 2,
                        0x40C74000, 0xC0, 0x40408000, 0x27" />
 
@@ -356,6 +366,11 @@
             Resources="0x43010000, 0x26, 0x40800000, 2073, 0x40800100, 1516, 0x40C00000, 2,
                        0x40C74000, 0xC0, 0x40408000, 0x27" />
 
+        <Config
+            Id="0x00001080" Type="4" Enable="true" Timeout="115" Target="lagoon" Fps="144"
+            Resources="0x43010000, 0x26, 0x40800000, 2073, 0x40800100, 1516, 0x40C00000, 2,
+                       0x40C74000, 0xC0, 0x40408000, 0x27" />
+
     <!--MTP boost-->
         <!-- SCHEDBOOST resource opcode, value-->
         <!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
@@ -382,8 +397,8 @@
         <!-- Type="", MTP boost -->
         <Config
             Id="0x00001086" Enable="true" Target="lagoon"
-            Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
-                       0x40800100, 0xFFF, 0x42C10000, 0x1,  0x40408000, 0x19" />
+            Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 1555,
+                       0x40800100, 1516, 0x42C10000, 0x1,  0x40408000, 0x19" />
 
     <!--PackageInstall boost-->
         <!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
@@ -489,6 +504,10 @@
               Id="0x00001087" Type="1" Enable="true" Timeout="0" Target="lagoon" Fps="120"
               Resources="0x40800000, 1036, 0x40800100, 1017, 0x40C00000, 2" />
 
+          <Config
+              Id="0x00001087" Type="1" Enable="true" Timeout="0" Target="lagoon" Fps="144"
+              Resources="0x40800000, 1248, 0x40800100, 1017, 0x40C00000, 2" />
+
     <!--Display on Resource -->
          <!-- Display on resource opcode, value -->
          <Config
@@ -552,6 +571,43 @@
          <Config
                 Id="0x00001094" Type="120" Enable="true" Target="lagoon" Timeout="0"
                 Resources="0x41444000, 1, 0x41444100, 1, 0x40CA8000, 2" />
+
+         <!-- PREDECITIVE_LOAD BIG CORE resource opcode, value -->
+         <!-- PREDECITIVE_LOAD LITTLE Core resource opcode, value -->
+         <!-- SCHED_PREFER_SPREAD resource opcode, value -->
+         <!-- SLB_BIG_0, val-->
+         <!-- SLB_BIG_1, val-->
+         <!-- WALT_RTG_CFS_BOOST_PRIO resource opcode, value -->
+         <!-- SCHED_COLOC_DOWNMIGRATE_NS resource opcode, value -->
+         <!-- Type="144" -->
+         <Config
+                Id="0x00001094" Type="144" Enable="true" Target="lagoon" Timeout="0"
+                Resources="0x41444000, 1, 0x41444100, 1, 0x40CA8000, 2,
+                           0x40C68000, 0, 0x40C68010, 0, 0x40CC8000, 119,
+                           0x40C8C000, 100000000" />
+
+         <!-- PREDECITIVE_LOAD BIG CORE resource opcode, value -->
+         <!-- PREDECITIVE_LOAD LITTLE Core resource opcode, value -->
+         <!-- SCHED_PREFER_SPREAD resource opcode, value -->
+         <!-- SLB_BIG_0, val-->
+         <!-- SLB_PRIME, val-->
+         <!-- WALT_RTG_CFS_BOOST_PRIO resource opcode, value -->
+         <!-- SCHED_COLOC_DOWNMIGRATE_NS resource opcode, value -->
+         <!-- SCHED_WINDOW_TICKS_UPDATE resource opcode, value -->
+         <!-- Type="144" -->
+         <Config
+                Id="0x00001094" Type="144" Enable="true" Target="lito" Timeout="0"
+                Resources="0x41444000, 1, 0x41444100, 1, 0x40CA8000, 2,
+                           0x40C68000, 0, 0x40C68200, 0, 0x40CC8000, 119,
+                           0x40C8C000, 100000000, 0x40CA4000, 2" />
+
+         <!--Large Comp HInt -->
+         <!-- CPU min freq resource opcode, value -->
+         <!-- GPU MIN_FREQUENCY resource opcode,value -->
+         <!-- PID Affine opcode,value -->
+         <Config
+                Id="0x00001097" Type="0" Enable="true" Timeout="7" Target="lito" Fps="144"
+                Resources="0x40800000, 1500, 0x42804000, 0, 0x42C20000, 1" />
 
     </PerfBoost>
 </BoostConfigs>
