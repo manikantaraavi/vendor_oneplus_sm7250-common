@@ -215,6 +215,12 @@ android_app_import {
 }
 
 dex_import {
+	name: "WfdCommon",
+	owner: "oneplus",
+	jars: ["proprietary/system/framework/WfdCommon.jar"],
+}
+
+dex_import {
 	name: "com.motorola.motosignature",
 	owner: "oneplus",
 	jars: ["proprietary/system/framework/com.motorola.motosignature.jar"],
